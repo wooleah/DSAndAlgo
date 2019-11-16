@@ -1,5 +1,3 @@
-// Iterative - beats 70% runtime
-
 function sol(prices) {
   let final = 0;
   let buyIndex = 0;
