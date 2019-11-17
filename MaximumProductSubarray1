@@ -1,0 +1,26 @@
+https://leetcode.com/problems/maximum-product-subarray/
+
+My solution
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxProduct = function(nums) {
+  let final = nums[0];
+  let curMax = final;
+  let curMin = final;
+
+  let i = 1;
+  const len = nums.length;
+  for (i; i < len; ++i) {
+    const temp1 = curMin * nums[i];
+    const temp2 = curMax * nums[i];
+    curMax = Math.max(nums[i], temp1, temp2);
+    curMin = Math.min(nums[i], temp1, temp2);
+    final = Math.max(final, curMax);
+  }
+  return final;  
+};
+
+Good solutions
+https://leetcode.com/problems/maximum-product-subarray/discuss/48230/Possibly-simplest-solution-with-O(n)-time-complexity
